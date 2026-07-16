@@ -700,3 +700,8 @@ java.lang.RuntimeException: ERROR: Stock with ticker 'JNJ' not found in database
 	at java.base/java.lang.Thread.run(Thread.java:1516) ~[na:na]
 
 2026-07-16T15:08:22.037+03:00  WARN 5776 --- [portfolio] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h15m37s758ms323µs300ns).
+2026-07-16T15:25:00.752+03:00  INFO 5776 --- [portfolio] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-16T15:25:00.770+03:00  INFO 5776 --- [portfolio] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-07-16T15:25:00.776+03:00  INFO 5776 --- [portfolio] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-16T15:25:00.780+03:00  INFO 5776 --- [portfolio] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-07-16T15:25:00.783+03:00  INFO 5776 --- [portfolio] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
