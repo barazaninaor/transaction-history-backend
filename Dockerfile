@@ -1,7 +1,8 @@
-FROM maven:3.8.5-openjdk-17 AS build
+# השתמש בגרסת Java 21 (היא המודרנית והנתמכת ביותר כרגע)
+FROM maven:3.9.9-eclipse-temurin-21 AS build
 COPY . .
 RUN mvn clean package -DskipTests
 
-FROM eclipse-temurin:17-jdk-jammy
+FROM eclipse-temurin:21-jre-jammy
 COPY --from=build /target/*.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
