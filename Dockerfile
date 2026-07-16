@@ -1,8 +1,7 @@
-# השתמש בגרסת Java 17 (גרסה יציבה)
-FROM openjdk:17-jdk-slim
+FROM maven:3.8.5-openjdk-17 AS build
+COPY . .
+RUN mvn clean package -DskipTests
 
-# העתק את קובץ ה-JAR שנבנה על ידי Maven
-COPY target/*.jar app.jar
-
-# הרץ את האפליקציה
+FROM eclipse-temurin:17-jdk-slim
+COPY --from=build /target/*.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
