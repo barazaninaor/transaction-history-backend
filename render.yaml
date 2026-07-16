@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: transaction-history-backend
+    runtime: java
+    buildCommand: ./mvnw clean install -DskipTests
+    startCommand: java -jar target/*.jar
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:postgresql://dpg-d9cdd6uq1p3s73damtig-a.oregon-postgres.render.com:5432/portfolio_fdz5
+      - key: SPRING_DATASOURCE_USERNAME
+        value: portfolio
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: OEkpPHUW8aXnFsCRpa2IJAOTCzvQmIH8
